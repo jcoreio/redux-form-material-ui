@@ -1,12 +1,12 @@
 {
-  "name": "redux-form-material-ui",
-  "version": "5.0.0-beta.3",
+  "name": "@jcoreio/redux-form-material-ui",
+  "version": "5.0.0-beta.4",
   "description": "An adapter between Redux Form and Material UI components",
   "main": "./lib/index.js",
   "jsnext:main": "./es/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/erikras/redux-form-material-ui"
+    "url": "https://github.com/jcoreio/redux-form-material-ui"
   },
   "scripts": {
     "build": "npm run build:lib && npm run build:es && npm run build:umd && npm run build:umd:min",
@@ -32,9 +32,9 @@
   "author": "Erik Rasmussen <rasmussenerik@gmail.com> (http://github.com/erikras)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/erikras/redux-form-material-ui/issues"
+    "url": "https://github.com/jcoreio/redux-form-material-ui/issues"
   },
-  "homepage": "https://github.com/erikras/redux-form-material-ui",
+  "homepage": "https://github.com/jcoreio/redux-form-material-ui",
   "devDependencies": {
     "@material-ui/core": "^1.0.0",
     "babel-cli": "^6.24.1",
