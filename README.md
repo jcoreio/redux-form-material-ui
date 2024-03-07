@@ -1,6 +1,7 @@
 ---
 # redux-form-material-ui
 ---
+
 [![NPM Version](https://img.shields.io/npm/v/redux-form-material-ui.svg?style=flat-square)](https://www.npmjs.com/package/redux-form-material-ui)
 [![NPM Downloads](https://img.shields.io/npm/dm/redux-form-material-ui.svg?style=flat-square)](https://www.npmjs.com/package/redux-form-material-ui)
 [![Build Status](https://img.shields.io/travis/erikras/redux-form-material-ui/master.svg?style=flat-square)](https://travis-ci.org/erikras/redux-form-material-ui)
@@ -34,15 +35,15 @@ Using [yarn](https://yarnpkg.com):
 
 ## Available Components
 
-* [AutoComplete](http://www.material-ui.com/#/components/auto-complete)
-* [Checkbox](http://www.material-ui.com/#/components/checkbox)
-* ~[TimePicker](http://www.material-ui.com/#/components/time-picker)~ [Material-4787](https://github.com/callemall/material-ui/issues/4787)
-* ~[DatePicker](http://www.material-ui.com/#/components/date-picker)~ [Material-4787](https://github.com/callemall/material-ui/issues/4787)
-* [RadioButtonGroup](http://www.material-ui.com/#/components/radio-button)
-* [Select](http://www.material-ui.com/#/components/Select)
-* ~[Slider](http://www.material-ui.com/#/components/slider)~ [Material-4793](https://github.com/callemall/material-ui/issues/4793)
-* [TextField](http://www.material-ui.com/#/components/text-field)
-* [Switch](https://material.io/guidelines/components/lists-controls.html#lists-controls-types-of-list-controls)
+- [AutoComplete](http://www.material-ui.com/#/components/auto-complete)
+- [Checkbox](http://www.material-ui.com/#/components/checkbox)
+- ~[TimePicker](http://www.material-ui.com/#/components/time-picker)~ [Material-4787](https://github.com/callemall/material-ui/issues/4787)
+- ~[DatePicker](http://www.material-ui.com/#/components/date-picker)~ [Material-4787](https://github.com/callemall/material-ui/issues/4787)
+- [RadioButtonGroup](http://www.material-ui.com/#/components/radio-button)
+- [Select](http://www.material-ui.com/#/components/Select)
+- ~[Slider](http://www.material-ui.com/#/components/slider)~ [Material-4793](https://github.com/callemall/material-ui/issues/4793)
+- [TextField](http://www.material-ui.com/#/components/text-field)
+- [Switch](https://material.io/guidelines/components/lists-controls.html#lists-controls-types-of-list-controls)
 
 ## Usage
 
@@ -66,7 +67,7 @@ class MyForm extends Component {
   render() {
     return (
       <form>
-        <Field name="username" component={TextField} placeholder="Street"/>
+        <Field name="username" component={TextField} placeholder="Street" />
 
         <Field name="plan" component={Select} placeholder="Select a plan">
           <MenuItem value="monthly">Monthly</MenuItem>
@@ -74,14 +75,20 @@ class MyForm extends Component {
           <MenuItem value="lifetime">Lifetime</MenuItem>
         </Field>
 
-        <FormControlLabel control={<Field name="agreeToTerms" component={Checkbox} /> } label="Agree to terms?" />
+        <FormControlLabel
+          control={<Field name="agreeToTerms" component={Checkbox} />}
+          label="Agree to terms?"
+        />
 
-      <FormControlLabel control={<Field name="receiveEmails" component={Switch} /> } label="Please spam me!" />
+        <FormControlLabel
+          control={<Field name="receiveEmails" component={Switch} />}
+          label="Please spam me!"
+        />
 
         <Field name="bestFramework" component={RadioGroup}>
-          <Radio value="react" label="React"/>
-          <Radio value="angular" label="Angular"/>
-          <Radio value="ember" label="Ember"/>
+          <Radio value="react" label="React" />
+          <Radio value="angular" label="Angular" />
+          <Radio value="ember" label="Ember" />
         </Field>
       </form>
     )
@@ -90,7 +97,7 @@ class MyForm extends Component {
 
 // Decorate with redux-form
 MyForm = reduxForm({
-  form: 'myForm'
+  form: 'myForm',
 })(MyForm)
 
 export default MyForm

@@ -7,14 +7,16 @@ import { Code, Markdown, Values } from 'redux-form-website-template'
 
 const dest = document.getElementById('content')
 const reducer = combineReducers({
-  form: reduxFormReducer // mounted under "form"
+  form: reduxFormReducer, // mounted under "form"
 })
-const store = (window.devToolsExtension
-  ? window.devToolsExtension()(createStore)
-  : createStore)(reducer)
+const store = (
+  window.devToolsExtension
+    ? window.devToolsExtension()(createStore)
+    : createStore
+)(reducer)
 
-const showResults = values =>
-  new Promise(resolve => {
+const showResults = (values) =>
+  new Promise((resolve) => {
     setTimeout(() => {
       // simulate server latency
       window.alert(`You submitted:\n\n${JSON.stringify(values, null, 2)}`)
@@ -52,7 +54,7 @@ if (module.hot) {
   // Support hot reloading of components
   // and display an overlay for runtime errors
   const renderApp = render
-  const renderError = error => {
+  const renderError = (error) => {
     console.error('ERROR:', error) // eslint-disable-line no-console
     const RedBox = require('redbox-react')
     ReactDOM.render(<RedBox error={error} className="redbox" />, dest)

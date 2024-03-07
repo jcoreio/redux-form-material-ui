@@ -12,12 +12,12 @@ import {
   RadioGroup,
   Select,
   TextField,
-  Switch
+  Switch,
 } from 'redux-form-material-ui'
 
 // validation functions
-const required = value => (value == null ? 'Required' : undefined)
-const email = value =>
+const required = (value) => (value == null ? 'Required' : undefined)
+const email = (value) =>
   value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
     ? 'Invalid email'
     : undefined
@@ -30,7 +30,7 @@ class Form extends Component {
     //   .focus() // on TextField
   }
 
-  saveRef = ref => (this.ref = ref)
+  saveRef = (ref) => (this.ref = ref)
 
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props
@@ -139,8 +139,8 @@ class Form extends Component {
 
 const selector = formValueSelector('example')
 
-Form = connect(state => ({
-  numPizzas: selector(state, 'pizzas')
+Form = connect((state) => ({
+  numPizzas: selector(state, 'pizzas'),
 }))(Form)
 
 Form = reduxForm({
@@ -150,8 +150,8 @@ Form = reduxForm({
     name: 'Jane Doe',
     cheese: 'Cheddar',
     thinCrust: true,
-    pizzas: 1
-  }
+    pizzas: 1,
+  },
 })(Form)
 
 export default Form

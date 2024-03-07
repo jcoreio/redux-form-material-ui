@@ -1,5 +1,5 @@
-var path = require('path');
-var webpack = require('webpack');
+var path = require('path')
+var webpack = require('webpack')
 
 module.exports = {
   devtool: 'eval',
@@ -7,36 +7,36 @@ module.exports = {
     'babel-polyfill',
     'eventsource-polyfill', // necessary for hot reloading with IE
     'webpack-hot-middleware/client',
-    './src/index'
+    './src/index',
   ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/dist/'
+    publicPath: '/dist/',
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   resolve: {
-    modules: [ 'src', 'node_modules' ],
-    extensions: [ '.json', '.js' ]
+    modules: ['src', 'node_modules'],
+    extensions: ['.json', '.js'],
   },
   module: {
     loaders: [
       {
         test: /\.jsx?/,
-        loaders: [ 'babel-loader', 'eslint-loader' ],
-        include: path.join(__dirname, 'src')
+        loaders: ['babel-loader', 'eslint-loader'],
+        include: path.join(__dirname, 'src'),
       },
       {
         test: /\.json$/,
-        loader: 'json-loader'
+        loader: 'json-loader',
       },
       {
         test: /\.md/,
-        loaders: [ "html-loader", "markdown-loader" ]
-      }
-    ]
-  }
-};
+        loaders: ['html-loader', 'markdown-loader'],
+      },
+    ],
+  },
+}

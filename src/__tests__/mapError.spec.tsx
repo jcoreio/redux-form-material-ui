@@ -1,5 +1,6 @@
-import expect from 'expect'
+import { expect } from 'chai'
 import mapError from '../mapError'
+import { describe, it } from 'mocha'
 
 describe('mapError', () => {
   it('returns error if touched', () => {
@@ -8,21 +9,21 @@ describe('mapError', () => {
     const props = {
       meta: {
         touched: true,
-        error: 'FooError'
+        error: 'FooError',
       },
       input,
-      ...otherProps
+      ...otherProps,
     }
     const expected = {
       ...input,
       ...otherProps,
       error: true,
-      helperText: props.meta.error
+      helperText: props.meta.error,
     }
 
     const error = mapError(props)
 
-    expect(error).toEqual(expected)
+    expect(error).to.deep.equal(expected)
   })
 
   it('respects hasHelperText', () => {
@@ -32,20 +33,20 @@ describe('mapError', () => {
       hasHelperText: false,
       meta: {
         touched: true,
-        error: 'FooError'
+        error: 'FooError',
       },
       input,
-      ...otherProps
+      ...otherProps,
     }
     const expected = {
       ...input,
       ...otherProps,
-      error: true
+      error: true,
     }
 
     const error = mapError(props)
 
-    expect(error).toEqual(expected)
+    expect(error).to.deep.equal(expected)
   })
 
   it('returns no error if not touched', () => {
@@ -55,18 +56,18 @@ describe('mapError', () => {
       hasHelperText: true,
       meta: {
         touched: false,
-        error: 'FooError'
+        error: 'FooError',
       },
       input,
-      ...otherProps
+      ...otherProps,
     }
     const expected = {
       ...input,
-      ...otherProps
+      ...otherProps,
     }
 
     const error = mapError(props)
 
-    expect(error).toEqual(expected)
+    expect(error).to.deep.equal(expected)
   })
 })

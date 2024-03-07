@@ -10,11 +10,11 @@ You simply provide the string name of the Material UI component you want to rend
 
 Available components:
 
-* [Checkbox](http://www.material-ui.com/#/components/checkbox)
-* [RadioGroup](http://www.material-ui.com/#/components/radio-button)
-* [Select](http://www.material-ui.com/#/components/Select)
-* [TextField](http://www.material-ui.com/#/components/text-field)
-* [Switch](https://material.io/guidelines/components/lists-controls.html#lists-controls-types-of-list-controls)
+- [Checkbox](http://www.material-ui.com/#/components/checkbox)
+- [RadioGroup](http://www.material-ui.com/#/components/radio-button)
+- [Select](http://www.material-ui.com/#/components/Select)
+- [TextField](http://www.material-ui.com/#/components/text-field)
+- [Switch](https://material.io/guidelines/components/lists-controls.html#lists-controls-types-of-list-controls)
 
 The code for this example is
 [available here](https://github.com/erikras/redux-form-material-ui/tree/master/example).

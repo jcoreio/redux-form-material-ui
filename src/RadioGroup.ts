@@ -3,20 +3,12 @@ import createComponent from './createComponent'
 
 export default createComponent(
   RadioGroup,
-  ({
-    input: { onChange, value, ...inputProps },
-    meta,
-    onChange: onChangeFromField,
-    ...props
-  }) => ({
+  ({ input: { onChange, value, ...inputProps }, meta, ...props }) => ({
     ...inputProps,
     ...props,
     value,
     onChange: (event, value) => {
       onChange(value)
-      if (onChangeFromField) {
-        onChangeFromField(value)
-      }
-    }
+    },
   })
 )
