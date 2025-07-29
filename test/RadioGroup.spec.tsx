@@ -1,8 +1,8 @@
 import { expect } from 'chai'
-import RadioGroup from '@material-ui/core/RadioGroup'
+import { RadioGroup } from '@material-ui/core'
 import React from 'react'
 import { create } from 'react-test-renderer'
-import ReduxFormMaterialUIRadioGroup from '../RadioGroup'
+import ReduxFormMaterialUIRadioGroup from '../src/RadioGroup'
 import { describe, it } from 'mocha'
 
 const noop = () => {

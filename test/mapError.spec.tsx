@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import mapError from '../mapError'
+import mapError from '../src/mapError'
 import { describe, it } from 'mocha'
 
 describe('mapError', () => {

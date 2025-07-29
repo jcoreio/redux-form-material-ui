@@ -1,8 +1,8 @@
 import { expect } from 'chai'
-import Checkbox from '@material-ui/core/Checkbox'
+import { Checkbox } from '@material-ui/core'
 import React from 'react'
 import { create } from 'react-test-renderer'
-import ReduxFormMaterialUICheckbox from '../Checkbox'
+import ReduxFormMaterialUICheckbox from '../src/Checkbox'
 import { describe, it } from 'mocha'
 
 const noop = () => {

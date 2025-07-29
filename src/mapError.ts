@@ -17,13 +17,13 @@ const mapError = <P extends WrappedFieldProps & { hasHelperText?: boolean }>({
   ...props
 }: P): MapErrorProps<P> => {
   const errorProps: MapErrorProps<P> =
-    touched && (error || warning)
-      ? {
-          ...props,
-          ...input,
-          error: Boolean(error || warning),
-        }
-      : { ...input, ...props }
+    touched && (error || warning) ?
+      {
+        ...props,
+        ...input,
+        error: Boolean(error || warning),
+      }
+    : { ...input, ...props }
 
   if (touched && hasHelperText && (error || warning)) {
     errorProps.helperText = error || warning

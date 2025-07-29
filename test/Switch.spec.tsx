@@ -1,7 +1,7 @@
 import { expect } from 'chai'
-import Switch from '@material-ui/core/Switch'
+import { Switch } from '@material-ui/core'
 import React from 'react'
-import ReduxFormMaterialUISwitch from '../Switch'
+import ReduxFormMaterialUISwitch from '../src/Switch'
 import { create } from 'react-test-renderer'
 import { describe, it } from 'mocha'
 

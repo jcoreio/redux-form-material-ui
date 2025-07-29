@@ -33,72 +33,73 @@
   },
   "homepage": "https://github.com/jcoreio/redux-form-material-ui",
   "devDependencies": {
-    "@jcoreio/toolchain": "^3.4.0",
-    "@jcoreio/toolchain-circle": "^3.4.0",
-    "@jcoreio/toolchain-esnext": "^3.4.0",
-    "@jcoreio/toolchain-mocha": "^3.4.0",
-    "@jcoreio/toolchain-react": "^3.4.0",
-    "@jcoreio/toolchain-semantic-release": "^3.4.0",
-    "@jcoreio/toolchain-typescript": "^3.5.0",
+    "@jcoreio/toolchain": "^5.5.3",
+    "@jcoreio/toolchain-circle": "^5.5.3",
+    "@jcoreio/toolchain-esnext": "^5.5.3",
+    "@jcoreio/toolchain-mocha": "^5.5.3",
+    "@jcoreio/toolchain-react": "^5.5.3",
+    "@jcoreio/toolchain-semantic-release": "^5.5.3",
+    "@jcoreio/toolchain-typescript": "^5.5.3",
     "@material-ui/core": "^4.12.4",
-    "@types/chai": "^4.0.0",
+    "@types/chai": "^4.3.5",
     "@types/chai-subset": "^1.3.5",
     "@types/mocha": "^10.0.6",
     "@types/react": "^18.2.64",
     "@types/react-is": "^18.2.4",
     "@types/react-test-renderer": "^18.0.7",
     "@types/redux-form": "^8.3.10",
-    "@typescript-eslint/eslint-plugin": "^5.60.0",
-    "@typescript-eslint/parser": "^5.60.0",
     "babel-loader": "^7.1.1",
-    "chai": "^4.0.0",
+    "chai": "^4.3.7",
     "chai-subset": "^1.6.0",
-    "codecov.io": "^0.1.6",
-    "cross-env": "^5.0.5",
-    "eslint": "^8.43.0",
-    "eslint-config-react-app": "^2.0.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.32.2",
-    "global-jsdom": "^24.0.0",
-    "jsdom": "^24.0.0",
+    "eslint": "^9.17.0",
+    "global-jsdom": "^9.0.1",
+    "globals": "^16.0.0",
+    "jsdom": "^22.1.0",
+    "lint-staged": "^15.2.2",
     "mocha": "^10.2.0",
-    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^17.1.0",
+    "prettier": "^3.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-test-renderer": "^18.2.0",
-    "rimraf": "^2.6.1",
-    "typescript": "^5.4.2",
-    "webpack": "^3.5.2"
+    "typescript": "^5.4.2"
   },
   "peerDependencies": {
     "@material-ui/core": "^4.0.0 || ^5.0.0",
     "react": "16 || ^17.0.0 || ^18.0.0",
     "redux-form": "^7.0.0 || ^8.0.0"
   },
-  "npmName": "redux-form-material-ui",
-  "npmFileMap": [
-    {
-      "basePath": "/dist/",
-      "files": [
-        "*.js"
-      ]
-    }
-  ],
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
+      "types": {
+        "import": "./dist/index.d.mts",
+        "default": "./dist/index.d.ts"
+      },
+      "import": "./dist/index.mjs",
       "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": {
+        "import": "./dist/*.d.mts",
+        "default": "./dist/*.d.ts"
+      },
+      "import": "./dist/*.mjs",
+      "default": "./dist/*.js"
     }
   },
   "sideEffects": false,
   "engines": {
     "node": ">=16"
   },
-  "packageManager": "pnpm@8.11.0",
+  "packageManager": "pnpm@10.6.5",
   "dependencies": {
-    "@babel/runtime": "^7.18.6",
+    "@babel/runtime": "^7.26.0",
     "react-is": "^18.2.0"
+  },
+  "@jcoreio/toolchain": {
+    "migratedVersion": "5.5.3"
   }
 }

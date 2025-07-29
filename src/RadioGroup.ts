@@ -1,9 +1,14 @@
-import RadioGroup from '@material-ui/core/RadioGroup'
+import { RadioGroup } from '@material-ui/core'
 import createComponent from './createComponent'
 
 export default createComponent(
   RadioGroup,
-  ({ input: { onChange, value, ...inputProps }, meta, ...props }) => ({
+  ({
+    input: { onChange, value, ...inputProps },
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    meta,
+    ...props
+  }) => ({
     ...inputProps,
     ...props,
     value,

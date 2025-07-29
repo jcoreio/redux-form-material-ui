@@ -1,6 +1,6 @@
 import React from 'react'
 import { isForwardRef } from 'react-is'
-import { WrappedFieldInputProps, WrappedFieldProps } from 'redux-form'
+import { WrappedFieldProps } from 'redux-form'
 
 /**
  * Creates a component class that renders the given Material UI component
@@ -9,20 +9,29 @@ import { WrappedFieldInputProps, WrappedFieldProps } from 'redux-form'
  * @param mapProps A mapping of props provided by redux-form to the props the Material UI
  * component needs
  */
-// eslint-disable-next-line @typescript-eslint/ban-types
-export default function createComponent<P extends {}>(
-  MaterialUIComponent: React.ComponentType<P>,
+export default function createComponent<C extends React.ComponentType<any>>(
+  MaterialUIComponent: C,
   mapProps: (
-    props: WrappedFieldProps &
-      Omit<P, keyof WrappedFieldInputProps | 'error' | 'hasHelperText'>
-  ) => P
+    props: Omit<
+      WrappedFieldProps & Omit<React.ComponentProps<C>, 'input' | 'meta'>,
+      'ref'
+    >
+  ) => React.ComponentProps<C>
 ) {
-  const InputComponent = React.forwardRef(function InputComponent(
-    props: WrappedFieldProps &
-      Omit<P, keyof WrappedFieldInputProps | 'error' | 'hasHelperText'>,
+  const InputComponent = React.forwardRef<
+    any,
+    WrappedFieldProps & React.ComponentProps<C>
+  >(function InputComponent(
+    props: Omit<
+      WrappedFieldProps & Omit<React.ComponentProps<C>, 'input' | 'meta'>,
+      'ref'
+    >,
     ref
   ) {
-    return React.createElement(MaterialUIComponent, { ...mapProps(props), ref })
+    return React.createElement(MaterialUIComponent, {
+      ...mapProps(props),
+      ref,
+    })
   })
   InputComponent.displayName = `ReduxFormMaterialUI(${getDisplayName(
     MaterialUIComponent

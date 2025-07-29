@@ -1,7 +1,7 @@
 import { expect } from 'chai'
-import TextField from '@material-ui/core/TextField'
+import { TextField } from '@material-ui/core'
 import React from 'react'
-import ReduxFormMaterialUITextField from '../TextField'
+import ReduxFormMaterialUITextField from '../src/TextField'
 import { create } from 'react-test-renderer'
 import { describe, it } from 'mocha'
 

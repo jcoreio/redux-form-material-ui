@@ -1,7 +1,7 @@
 import { expect } from 'chai'
-import Select from '@material-ui/core/Select'
+import { Select } from '@material-ui/core'
 import React from 'react'
-import ReduxFormMaterialUISelect from '../Select'
+import ReduxFormMaterialUISelect from '../src/Select'
 import { create } from 'react-test-renderer'
 import { describe, it } from 'mocha'
 
